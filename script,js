@@ -1,0 +1,16 @@
+$(document).ready(function() {
+    $("#registrationForm").submit(function(event) {
+        var isValid = true;
+        $("input, select, textarea").each(function() {
+            if ($(this).val() == "") {
+                isValid = false;
+                alert("Please fill all the fields.");
+                return false;
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+});
